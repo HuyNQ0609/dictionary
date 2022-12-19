@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+    <h1>Dictionary Eng - Vie</h1>
+    <p>Enter a Word: </p>
+    <input type="text" name="" id="string">
+    <input type="submit" value="Eng -> Vie" onclick="convert(1)">
+    <input type="submit" value="Vie -> Eng" onclick="convert(0)">
+    <p id="result"></p>
+</body>
+<script>
+        let x = ['Pen', 'Pencil', 'Apple', 'Banana','Mango', 'Cucumber', 'Coconut', 'Potato', 'Tomato', 'Vegetables'];
+        let y = ['Bút mực', 'Bút chì', 'Quả táo', 'Quả chuối', 'Quả xoài', 'Quả dưa chuột', 'Quả dừa', 'Quả cà chua', 'Củ khoai tây', 'Rau'];
+    function convert(check) {
+        if(check === 0){
+            let z = x.splice(0, x.length)
+            x = y;
+            y = z;
+        }
+        let string = document.getElementById("string").value;
+        let name = 0;
+        let result = "";
+        for (let i = 0; i < x.length; i++) {
+            if (string === x[i]) {
+                name = i;
+                for (let j = 0; j < y.length; j++) {
+                    if (name === j) {
+                        result = y[j];
+                    }
+                }
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+
+</script>
+</html>
